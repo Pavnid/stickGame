@@ -91,15 +91,16 @@ public class GameController : MonoBehaviour
 
     public void KillOponent()
     {
+        Debug.Log("came in kill oponent");
         if (currentPlayerIndex == 0)
         {
             GameObject player2 = GameObject.Find("player2");
-        //     for (int i = 0; i < 9; i += 2)
-        // {
-            string childName = "stick0"; //+ i.ToString(); // Generating child name dynamically
-            Transform childTransform = player2.transform.Find(childName);
-            // if (childTransform != null)
-            // {
+             for (int i = 0; i < 9; i += 2)
+            {
+                string childName = "stick" + i.ToString(); // Generating child name dynamically
+                Transform childTransform = player2.transform.Find(childName);
+                // if (childTransform != null)
+                // {
                 //GameObject childGameObject = childTransform.gameObject;
                 
                 BoxCollider2D collider = childTransform.GetComponent<BoxCollider2D>();
@@ -109,7 +110,7 @@ public class GameController : MonoBehaviour
                     collider.enabled = true;
                     Debug.Log("box collider of " + childName + "is activated");
                 // }
-            //}
+            }
             // else
             // {
             //     Debug.LogWarning("Child GameObject '" + childName + "' not found!");
@@ -129,10 +130,6 @@ public class GameController : MonoBehaviour
         }
     //}
 
-    public void OnMouseDown()
-    {
-        Destroy(gameObject); // Destroy the GameObject (in this case, the text element)
-    }
 
     // Method to notify that the player's move is completed
     public void PlayerMoveCompleted()
@@ -146,4 +143,5 @@ public class GameController : MonoBehaviour
             StartCoroutine(NextPlayerTurn());
         // }
     }
+
 }
