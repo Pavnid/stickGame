@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
     public int count4 = 0;
     public int count6 = 0;
     public int count8 = 0;
-
+    //bullets
+    private int bullet = 0;
     // Reference to the GameController script
     public GameController gameController;
 
@@ -251,17 +252,17 @@ public class PlayerController : MonoBehaviour
     {
         if (count0 <5)
         {
-            count0 = +2;
+            bullet = +2;
         }
         
     }
     public void KillChanceReduce()
     {
-        count0--;
+        bullet--;
     }
     public void NotAbleToKill()
     {
-        if(count0 > 5)
+        if(bullet==0)
         {
             // disable stick for kill 
             
