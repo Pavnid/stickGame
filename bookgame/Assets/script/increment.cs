@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     public Text count6Text;
     public Text count8Text;
     //body part image
-   
+
 
     // Method to handle the player's turn
     public void StartPlayerTurn(int result)
@@ -33,14 +33,14 @@ public class PlayerController : MonoBehaviour
         switch (result)
         {
             case 0:
-                
-                count0++;   
+
+                count0++;
                 //count0Text.text = "Count 0: " + count0;
                 if (count0 == 1)
                 {
-                    count0Text.text= "head";
+                    count0Text.text = "head";
                     count0Text.color = Color.red;
-                    
+
                     // Add your message or action here
                 }
                 else if (count0 == 2)
@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
                 {
                     count2Text.text = "...BULLETS...";
                     count2Text.color = Color.red;
-                   gameController.KillOponent();
+                    gameController.KillOponent();
                     // Add your message or action here
                 }
                 break;
@@ -233,6 +233,7 @@ public class PlayerController : MonoBehaviour
                     count8Text.text = "...BULLETS...";
                     count8Text.color = Color.red;
                     gameController.KillOponent();
+                    
                     // Add your message or action here
                 }
                 break;
@@ -246,4 +247,24 @@ public class PlayerController : MonoBehaviour
         gameController.PlayerMoveCompleted();
     }
 
+    public void BulletIncrement()
+    {
+        if (count0 <5)
+        {
+            count0 = +2;
+        }
+        
+    }
+    public void KillChanceReduce()
+    {
+        count0--;
+    }
+    public void NotAbleToKill()
+    {
+        if(count0 > 5)
+        {
+            // disable stick for kill 
+            
+        }
+    }
 }
