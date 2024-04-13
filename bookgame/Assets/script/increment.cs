@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events; // This is so that you can extend the pointer handlers
@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     public Text count4Text;
     public Text count6Text;
     public Text count8Text;
+    //body part image
+   
 
     // Method to handle the player's turn
     public void StartPlayerTurn(int result)
@@ -36,7 +38,7 @@ public class PlayerController : MonoBehaviour
                 //count0Text.text = "Count 0: " + count0;
                 if (count0 == 1)
                 {
-                    count0Text.text="head";
+                    count0Text.text= "head";
                     count0Text.color = Color.red;
                     
                     // Add your message or action here
@@ -110,7 +112,7 @@ public class PlayerController : MonoBehaviour
                 {
                     count2Text.text = "...BULLETS...";
                     count2Text.color = Color.red;
-                    gameController.KillOponent();
+                   gameController.KillOponent();
                     // Add your message or action here
                 }
                 break;
