@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Dice : MonoBehaviour {
+public class Dice : MonoBehaviour
+{
 
     // Array of dice sides sprites to load from Resources folder
     private Sprite[] diceSides;
@@ -9,16 +10,17 @@ public class Dice : MonoBehaviour {
     // Reference to sprite renderer to change sprites
     private SpriteRenderer rend;
 
-	// Use this for initialization
-	private void Start () {
+    // Use this for initialization
+    private void Start()
+    {
 
         // Assign Renderer component
         rend = GetComponent<SpriteRenderer>();
 
         // Load dice sides sprites to array from DiceSides subfolder of Resources folder
         diceSides = Resources.LoadAll<Sprite>("DiceSides/");
-	}
-	
+    }
+
     // If you left click over the dice then RollTheDice coroutine is started
     private void OnMouseDown()
     {
