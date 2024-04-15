@@ -7,6 +7,7 @@ public class Dice : MonoBehaviour
     private Sprite[] diceSides;
     private SpriteRenderer rend;
     private PlayerRoundManager roundManager;
+    
 
     private void Start()
     {
@@ -33,9 +34,12 @@ public class Dice : MonoBehaviour
         }
 
         finalSide = randomDiceSide + 1;
+        
         Debug.Log("Player " + (roundManager.GetCurrentPlayerIndex() + 1) + " rolled: " + finalSide);
 
         // End the current round
         roundManager.EndCurrentRound();
+        
+        
     }
 }
