@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-
 public class Dice : MonoBehaviour
 {
     private Sprite[] diceSides;
     private SpriteRenderer rend;
     private PlayerRoundManager roundManager;
-    
+    private int finalSide; // Declare finalSide as a class-level variable
 
     private void Start()
     {
@@ -24,7 +23,6 @@ public class Dice : MonoBehaviour
     private IEnumerator RollTheDice()
     {
         int randomDiceSide = 0;
-        int finalSide = 0;
 
         for (int i = 0; i <= 20; i++)
         {
@@ -34,12 +32,16 @@ public class Dice : MonoBehaviour
         }
 
         finalSide = randomDiceSide + 1;
-        
+
         Debug.Log("Player " + (roundManager.GetCurrentPlayerIndex() + 1) + " rolled: " + finalSide);
 
         // End the current round
         roundManager.EndCurrentRound();
-        
-        
+    }
+
+    // Add a method to access finalSide from other scripts
+    public int GetFinalSide()
+    {
+        return finalSide;
     }
 }
