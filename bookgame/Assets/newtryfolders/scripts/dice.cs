@@ -7,6 +7,9 @@ public class Dice : MonoBehaviour
     private SpriteRenderer rend;
     private PlayerRoundManager roundManager;
     private int finalSide; // Declare finalSide as a class-level variable
+    stickGeneration EmpGameObject;
+
+    
 
     private void Start()
     {
@@ -37,6 +40,8 @@ public class Dice : MonoBehaviour
 
         // End the current round
         roundManager.EndCurrentRound();
+        EmpGameObject =  GameObject.FindWithTag("emp").GetComponent<stickGeneration>();
+        EmpGameObject.StartTurn(finalSide);
     }
 
     // Add a method to access finalSide from other scripts
